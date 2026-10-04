@@ -83,5 +83,5 @@ app.get("/api/dashboard",auth,(req,res)=>{
   res.json({creators,users,diamonds:72000,hours:88,days:33});
 });
 
-app.get("*",(req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
+app.get(/.*/,(req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
 app.listen(process.env.PORT||3000,()=>console.log("Lion Dynasty Agency running"));
